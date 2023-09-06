@@ -18,7 +18,6 @@
             "main": "projects/container-app/src/main.ts",
             "polyfills": "projects/container-app/src/polyfills.ts",
             "tsConfig": "projects/container-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/container-app/src/favicon.ico",
               "projects/container-app/src/assets"
@@ -29,7 +28,13 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -59,7 +64,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -137,7 +143,6 @@
             "main": "projects/first-micro-app/src/main.ts",
             "polyfills": "projects/first-micro-app/src/polyfills.ts",
             "tsConfig": "projects/first-micro-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/first-micro-app/src/favicon.ico",
               "projects/first-micro-app/src/assets"
@@ -145,7 +150,13 @@
             "styles": [
               "projects/first-micro-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -175,7 +186,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -253,7 +265,6 @@
             "main": "projects/second-micro-app/src/main.ts",
             "polyfills": "projects/second-micro-app/src/polyfills.ts",
             "tsConfig": "projects/second-micro-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/second-micro-app/src/favicon.ico",
               "projects/second-micro-app/src/assets"
@@ -261,7 +272,13 @@
             "styles": [
               "projects/second-micro-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -291,7 +308,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -369,7 +387,6 @@
             "main": "projects/third-micro-app/src/main.ts",
             "polyfills": "projects/third-micro-app/src/polyfills.ts",
             "tsConfig": "projects/third-micro-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/third-micro-app/src/favicon.ico",
               "projects/third-micro-app/src/assets"
@@ -377,7 +394,13 @@
             "styles": [
               "projects/third-micro-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -407,7 +430,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
