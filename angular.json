@@ -155,9 +155,12 @@
 							"projects/first-micro-app/src/assets"
 						],
 						"styles": [
-							"projects/first-micro-app/src/styles.css"
+							"projects/first-micro-app/src/styles.css",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css"
 						],
-						"scripts": [],
+						"scripts": [
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+						],
 						"vendorChunk": true,
 						"extractLicenses": false,
 						"buildOptimizer": false,
@@ -284,9 +287,12 @@
 							"projects/second-micro-app/src/assets"
 						],
 						"styles": [
-							"projects/second-micro-app/src/styles.css"
+							"projects/second-micro-app/src/styles.css",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css"
 						],
-						"scripts": [],
+						"scripts": [
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+						],
 						"vendorChunk": true,
 						"extractLicenses": false,
 						"buildOptimizer": false,
@@ -413,9 +419,12 @@
 							"projects/third-micro-app/src/assets"
 						],
 						"styles": [
-							"projects/third-micro-app/src/styles.css"
+							"projects/third-micro-app/src/styles.css",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css"
 						],
-						"scripts": [],
+						"scripts": [
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+						],
 						"vendorChunk": true,
 						"extractLicenses": false,
 						"buildOptimizer": false,
