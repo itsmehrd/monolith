@@ -1,501 +1,509 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "container-app": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/container-app",
-      "sourceRoot": "projects/container-app/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/container-app",
-            "index": "projects/container-app/src/index.html",
-            "main": "projects/container-app/src/main.ts",
-            "polyfills": "projects/container-app/src/polyfills.ts",
-            "tsConfig": "projects/container-app/tsconfig.app.json",
-            "assets": [
-              "projects/container-app/src/favicon.ico",
-              "projects/container-app/src/assets"
-            ],
-            "styles": [
-              "projects/container-app/src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/container-app/src/environments/environment.ts",
-                  "with": "projects/container-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "container-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "container-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "container-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/container-app/src/test.ts",
-            "polyfills": "projects/container-app/src/polyfills.ts",
-            "tsConfig": "projects/container-app/tsconfig.spec.json",
-            "karmaConfig": "projects/container-app/karma.conf.js",
-            "assets": [
-              "projects/container-app/src/favicon.ico",
-              "projects/container-app/src/assets"
-            ],
-            "styles": [
-              "projects/container-app/src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/container-app/tsconfig.app.json",
-              "projects/container-app/tsconfig.spec.json",
-              "projects/container-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/container-app/e2e/protractor.conf.js",
-            "devServerTarget": "container-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "container-app:serve:production"
-            }
-          }
-        }
-      }
-    },
-    "first-micro-app": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/first-micro-app",
-      "sourceRoot": "projects/first-micro-app/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/first-micro-app",
-            "index": "projects/first-micro-app/src/index.html",
-            "main": "projects/first-micro-app/src/main.ts",
-            "polyfills": "projects/first-micro-app/src/polyfills.ts",
-            "tsConfig": "projects/first-micro-app/tsconfig.app.json",
-            "assets": [
-              "projects/first-micro-app/src/favicon.ico",
-              "projects/first-micro-app/src/assets"
-            ],
-            "styles": [
-              "projects/first-micro-app/src/styles.css"
-            ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/first-micro-app/src/environments/environment.ts",
-                  "with": "projects/first-micro-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "first-micro-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "first-micro-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "first-micro-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/first-micro-app/src/test.ts",
-            "polyfills": "projects/first-micro-app/src/polyfills.ts",
-            "tsConfig": "projects/first-micro-app/tsconfig.spec.json",
-            "karmaConfig": "projects/first-micro-app/karma.conf.js",
-            "assets": [
-              "projects/first-micro-app/src/favicon.ico",
-              "projects/first-micro-app/src/assets"
-            ],
-            "styles": [
-              "projects/first-micro-app/src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/first-micro-app/tsconfig.app.json",
-              "projects/first-micro-app/tsconfig.spec.json",
-              "projects/first-micro-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/first-micro-app/e2e/protractor.conf.js",
-            "devServerTarget": "first-micro-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "first-micro-app:serve:production"
-            }
-          }
-        }
-      }
-    },
-    "second-micro-app": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/second-micro-app",
-      "sourceRoot": "projects/second-micro-app/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/second-micro-app",
-            "index": "projects/second-micro-app/src/index.html",
-            "main": "projects/second-micro-app/src/main.ts",
-            "polyfills": "projects/second-micro-app/src/polyfills.ts",
-            "tsConfig": "projects/second-micro-app/tsconfig.app.json",
-            "assets": [
-              "projects/second-micro-app/src/favicon.ico",
-              "projects/second-micro-app/src/assets"
-            ],
-            "styles": [
-              "projects/second-micro-app/src/styles.css"
-            ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/second-micro-app/src/environments/environment.ts",
-                  "with": "projects/second-micro-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "second-micro-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "second-micro-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "second-micro-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/second-micro-app/src/test.ts",
-            "polyfills": "projects/second-micro-app/src/polyfills.ts",
-            "tsConfig": "projects/second-micro-app/tsconfig.spec.json",
-            "karmaConfig": "projects/second-micro-app/karma.conf.js",
-            "assets": [
-              "projects/second-micro-app/src/favicon.ico",
-              "projects/second-micro-app/src/assets"
-            ],
-            "styles": [
-              "projects/second-micro-app/src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/second-micro-app/tsconfig.app.json",
-              "projects/second-micro-app/tsconfig.spec.json",
-              "projects/second-micro-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/second-micro-app/e2e/protractor.conf.js",
-            "devServerTarget": "second-micro-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "second-micro-app:serve:production"
-            }
-          }
-        }
-      }
-    },
-    "third-micro-app": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/third-micro-app",
-      "sourceRoot": "projects/third-micro-app/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/third-micro-app",
-            "index": "projects/third-micro-app/src/index.html",
-            "main": "projects/third-micro-app/src/main.ts",
-            "polyfills": "projects/third-micro-app/src/polyfills.ts",
-            "tsConfig": "projects/third-micro-app/tsconfig.app.json",
-            "assets": [
-              "projects/third-micro-app/src/favicon.ico",
-              "projects/third-micro-app/src/assets"
-            ],
-            "styles": [
-              "projects/third-micro-app/src/styles.css"
-            ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/third-micro-app/src/environments/environment.ts",
-                  "with": "projects/third-micro-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "third-micro-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "third-micro-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "third-micro-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/third-micro-app/src/test.ts",
-            "polyfills": "projects/third-micro-app/src/polyfills.ts",
-            "tsConfig": "projects/third-micro-app/tsconfig.spec.json",
-            "karmaConfig": "projects/third-micro-app/karma.conf.js",
-            "assets": [
-              "projects/third-micro-app/src/favicon.ico",
-              "projects/third-micro-app/src/assets"
-            ],
-            "styles": [
-              "projects/third-micro-app/src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/third-micro-app/tsconfig.app.json",
-              "projects/third-micro-app/tsconfig.spec.json",
-              "projects/third-micro-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/third-micro-app/e2e/protractor.conf.js",
-            "devServerTarget": "third-micro-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "third-micro-app:serve:production"
-            }
-          }
-        }
-      }
-    }},
-  "cli": {
-    "analytics": false
-  },
-  "defaultProject": "container-app"
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"container-app": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/container-app",
+			"sourceRoot": "projects/container-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/container-app",
+						"index": "projects/container-app/src/index.html",
+						"main": "projects/container-app/src/main.ts",
+						"polyfills": "projects/container-app/src/polyfills.ts",
+						"tsConfig": "projects/container-app/tsconfig.app.json",
+						"assets": [
+							"projects/container-app/src/favicon.ico",
+							"projects/container-app/src/assets"
+						],
+						"styles": [
+							"projects/container-app/src/styles.css",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css"
+						],
+						"scripts": [
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+						],
+						"vendorChunk": true,
+						"extractLicenses": false,
+						"buildOptimizer": false,
+						"sourceMap": true,
+						"optimization": false,
+						"namedChunks": true,
+						"extraWebpackConfig": "projects/container-app/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "projects/container-app/src/environments/environment.ts",
+									"with": "projects/container-app/src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							],
+							"extraWebpackConfig": "projects/container-app/webpack.prod.config.js"
+						}
+					},
+					"defaultConfiguration": ""
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"options": {
+						"browserTarget": "container-app:build",
+						"port": 6543,
+						"extraWebpackConfig": "projects/container-app/webpack.config.js"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "container-app:build:production",
+							"extraWebpackConfig": "projects/container-app/webpack.prod.config.js"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "container-app:build",
+						"extraWebpackConfig": "projects/container-app/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/container-app/src/test.ts",
+						"polyfills": "projects/container-app/src/polyfills.ts",
+						"tsConfig": "projects/container-app/tsconfig.spec.json",
+						"karmaConfig": "projects/container-app/karma.conf.js",
+						"assets": [
+							"projects/container-app/src/favicon.ico",
+							"projects/container-app/src/assets"
+						],
+						"styles": [
+							"projects/container-app/src/styles.css"
+						],
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"projects/container-app/tsconfig.app.json",
+							"projects/container-app/tsconfig.spec.json",
+							"projects/container-app/e2e/tsconfig.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "projects/container-app/e2e/protractor.conf.js",
+						"devServerTarget": "container-app:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "container-app:serve:production"
+						}
+					}
+				}
+			}
+		},
+		"first-micro-app": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/first-micro-app",
+			"sourceRoot": "projects/first-micro-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/first-micro-app",
+						"index": "projects/first-micro-app/src/index.html",
+						"main": "projects/first-micro-app/src/main.ts",
+						"polyfills": "projects/first-micro-app/src/polyfills.ts",
+						"tsConfig": "projects/first-micro-app/tsconfig.app.json",
+						"assets": [
+							"projects/first-micro-app/src/favicon.ico",
+							"projects/first-micro-app/src/assets"
+						],
+						"styles": [
+							"projects/first-micro-app/src/styles.css"
+						],
+						"scripts": [],
+						"vendorChunk": true,
+						"extractLicenses": false,
+						"buildOptimizer": false,
+						"sourceMap": true,
+						"optimization": false,
+						"namedChunks": true
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "projects/first-micro-app/src/environments/environment.ts",
+									"with": "projects/first-micro-app/src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
+						}
+					},
+					"defaultConfiguration": ""
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "first-micro-app:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "first-micro-app:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "first-micro-app:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/first-micro-app/src/test.ts",
+						"polyfills": "projects/first-micro-app/src/polyfills.ts",
+						"tsConfig": "projects/first-micro-app/tsconfig.spec.json",
+						"karmaConfig": "projects/first-micro-app/karma.conf.js",
+						"assets": [
+							"projects/first-micro-app/src/favicon.ico",
+							"projects/first-micro-app/src/assets"
+						],
+						"styles": [
+							"projects/first-micro-app/src/styles.css"
+						],
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"projects/first-micro-app/tsconfig.app.json",
+							"projects/first-micro-app/tsconfig.spec.json",
+							"projects/first-micro-app/e2e/tsconfig.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "projects/first-micro-app/e2e/protractor.conf.js",
+						"devServerTarget": "first-micro-app:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "first-micro-app:serve:production"
+						}
+					}
+				}
+			}
+		},
+		"second-micro-app": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/second-micro-app",
+			"sourceRoot": "projects/second-micro-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/second-micro-app",
+						"index": "projects/second-micro-app/src/index.html",
+						"main": "projects/second-micro-app/src/main.ts",
+						"polyfills": "projects/second-micro-app/src/polyfills.ts",
+						"tsConfig": "projects/second-micro-app/tsconfig.app.json",
+						"assets": [
+							"projects/second-micro-app/src/favicon.ico",
+							"projects/second-micro-app/src/assets"
+						],
+						"styles": [
+							"projects/second-micro-app/src/styles.css"
+						],
+						"scripts": [],
+						"vendorChunk": true,
+						"extractLicenses": false,
+						"buildOptimizer": false,
+						"sourceMap": true,
+						"optimization": false,
+						"namedChunks": true
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "projects/second-micro-app/src/environments/environment.ts",
+									"with": "projects/second-micro-app/src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
+						}
+					},
+					"defaultConfiguration": ""
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "second-micro-app:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "second-micro-app:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "second-micro-app:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/second-micro-app/src/test.ts",
+						"polyfills": "projects/second-micro-app/src/polyfills.ts",
+						"tsConfig": "projects/second-micro-app/tsconfig.spec.json",
+						"karmaConfig": "projects/second-micro-app/karma.conf.js",
+						"assets": [
+							"projects/second-micro-app/src/favicon.ico",
+							"projects/second-micro-app/src/assets"
+						],
+						"styles": [
+							"projects/second-micro-app/src/styles.css"
+						],
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"projects/second-micro-app/tsconfig.app.json",
+							"projects/second-micro-app/tsconfig.spec.json",
+							"projects/second-micro-app/e2e/tsconfig.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "projects/second-micro-app/e2e/protractor.conf.js",
+						"devServerTarget": "second-micro-app:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "second-micro-app:serve:production"
+						}
+					}
+				}
+			}
+		},
+		"third-micro-app": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/third-micro-app",
+			"sourceRoot": "projects/third-micro-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/third-micro-app",
+						"index": "projects/third-micro-app/src/index.html",
+						"main": "projects/third-micro-app/src/main.ts",
+						"polyfills": "projects/third-micro-app/src/polyfills.ts",
+						"tsConfig": "projects/third-micro-app/tsconfig.app.json",
+						"assets": [
+							"projects/third-micro-app/src/favicon.ico",
+							"projects/third-micro-app/src/assets"
+						],
+						"styles": [
+							"projects/third-micro-app/src/styles.css"
+						],
+						"scripts": [],
+						"vendorChunk": true,
+						"extractLicenses": false,
+						"buildOptimizer": false,
+						"sourceMap": true,
+						"optimization": false,
+						"namedChunks": true
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "projects/third-micro-app/src/environments/environment.ts",
+									"with": "projects/third-micro-app/src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
+						}
+					},
+					"defaultConfiguration": ""
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "third-micro-app:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "third-micro-app:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "third-micro-app:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/third-micro-app/src/test.ts",
+						"polyfills": "projects/third-micro-app/src/polyfills.ts",
+						"tsConfig": "projects/third-micro-app/tsconfig.spec.json",
+						"karmaConfig": "projects/third-micro-app/karma.conf.js",
+						"assets": [
+							"projects/third-micro-app/src/favicon.ico",
+							"projects/third-micro-app/src/assets"
+						],
+						"styles": [
+							"projects/third-micro-app/src/styles.css"
+						],
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"projects/third-micro-app/tsconfig.app.json",
+							"projects/third-micro-app/tsconfig.spec.json",
+							"projects/third-micro-app/e2e/tsconfig.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "projects/third-micro-app/e2e/protractor.conf.js",
+						"devServerTarget": "third-micro-app:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "third-micro-app:serve:production"
+						}
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"analytics": false
+	},
+	"defaultProject": "container-app"
 }
