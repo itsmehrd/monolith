@@ -353,6 +353,123 @@
           }
         }
       }
+    },
+    "third-micro-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/third-micro-app",
+      "sourceRoot": "projects/third-micro-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/third-micro-app",
+            "index": "projects/third-micro-app/src/index.html",
+            "main": "projects/third-micro-app/src/main.ts",
+            "polyfills": "projects/third-micro-app/src/polyfills.ts",
+            "tsConfig": "projects/third-micro-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/third-micro-app/src/favicon.ico",
+              "projects/third-micro-app/src/assets"
+            ],
+            "styles": [
+              "projects/third-micro-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/third-micro-app/src/environments/environment.ts",
+                  "with": "projects/third-micro-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "third-micro-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "third-micro-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "third-micro-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/third-micro-app/src/test.ts",
+            "polyfills": "projects/third-micro-app/src/polyfills.ts",
+            "tsConfig": "projects/third-micro-app/tsconfig.spec.json",
+            "karmaConfig": "projects/third-micro-app/karma.conf.js",
+            "assets": [
+              "projects/third-micro-app/src/favicon.ico",
+              "projects/third-micro-app/src/assets"
+            ],
+            "styles": [
+              "projects/third-micro-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/third-micro-app/tsconfig.app.json",
+              "projects/third-micro-app/tsconfig.spec.json",
+              "projects/third-micro-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/third-micro-app/e2e/protractor.conf.js",
+            "devServerTarget": "third-micro-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "third-micro-app:serve:production"
+            }
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": false
